@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veni - About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+
+        .container {
+            background: #2a2a2a;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #667eea;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .username {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .bio {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #cccccc;
+            text-align: left;
+            background: #333333;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .games {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .game-tag {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .game-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+        }
+
+        .discord-note {
+            background: linear-gradient(135deg, #7289da, #5865f2);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 0.95em;
+            font-weight: 500;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discord-note::before {
+            content: '💬';
+            font-size: 1.5em;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .username {
+                font-size: 2em;
+            }
+            
+            .bio {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <img src="pfp.png" alt="Veni's Profile Picture" class="profile-pic">
+            <h1 class="username">veni</h1>
+        </div>
+        
+        <div class="bio">
+            Hello, you've stumbled upon my about-me website! Let me introduce myself: I am Veni, a 16-year-old programmer and gamer. I like coding Python, HTML, JS, CSS, and C# for fun. I like playing video games such as Rocket League, Rainbow Six Siege, and other shooter games. That's all you need to know about me!
+        </div>
+
+        <div class="section-title">Programming Languages</div>
+        <div class="skills">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">C#</span>
+        </div>
+
+        <div class="section-title">Favorite Games</div>
+        <div class="games">
+            <span class="game-tag">Rocket League</span>
+            <span class="game-tag">Rainbow Six Siege</span>
+            <span class="game-tag">Shooter Games</span>
+        </div>
+
+        <div class="discord-note">
+            If you have any questions, feel free to add me and message me on Discord! My friend requests are always open (unless someone starts botting my friend requests) 🎮
+        </div>
+    </div>
+</body>
+</html>
